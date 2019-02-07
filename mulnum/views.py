@@ -4,7 +4,6 @@ from django.http import Http404
 from django.http import HttpResponse ,HttpResponseRedirect
 from django.template import loader
 from django.views import generic
-from .models import Num
 from django.urls import reverse
 from django.utils import timezone
 
@@ -32,7 +31,6 @@ from django.utils import timezone
 #     template_name = 'mulnum/index.html'
 #     context_object_name = 'latest_num_list'
 
-def show(request,id):
-    context = {'number': id }
-
-    return render(request, 'mulnum/index.html', context)
+def show(request):
+    
+    return render(request, 'mulnum/index.html')

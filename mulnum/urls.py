@@ -3,7 +3,7 @@ from . import views
 
 app_name = 'm'
 urlpatterns = [
-    path('<int:id>/', views.show, name='index'),
+    path('input/', views.show, name='index'),
     # path('<int:num>',views.)
     
 ]
