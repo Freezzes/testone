@@ -3,12 +3,11 @@ from . import views
 
 app_name = 'm'
 urlpatterns = [
-    path('input/', views.show, name='index'),
-    # path('<int:num>',views.)
+    path('input/', views.inputnum, name='index'),   # show text box
+    path('<int:id>',views.show,name='mul'),         #multiplication by number in url
+    path('mult/',views.mul,name='mult'),            #multiplication by number from text box
     
 ]
 
 
-    # path('', views.IndexView.as_view(), name='index'),
-    # path('<int:num_text>',views.show,name='show')
     

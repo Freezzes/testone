@@ -1,38 +1,21 @@
 <h1>NUMBER</h1>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form action= "{% url 'm:mult' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="inte"  >
+        <input type="submit" value="SHOW">
+    </form>
+</body>
 
-<form method="GET">
+<hr>
+
+{% for i in num %}
+    <center>{{id}} x {{forloop.counter}} = {{i}}</center>
+    <br>
+{% endfor %}
     
-    <input type="number" name="inte" id="inte{{ forloop.counter }}" value="{{ inte }}">
-    <input type="submit" name="num">
-    <br><br>
-</form>
-    <h1>{{ inte }}</h1>
-    <h1>{{ inte.id }}</h1>
-    <h1>{{ num }}</h1>
-    {% for i in inte %}
-    <label for="inte{{ forloop.counter }}">{{ inte }}</label> 
-    {% endfor %}
-    <!-- <label for="inte{{ forloop.counter }}">{{ inte }}</label> 
-    <label for="inte{{ forloop.counter }}">{{ inte }}</label>  -->
 
 
-    
-<!-- <hr>
-<table align="center" border="0">
-  <tr>
-    <td align="center">ตัวตั้ง</td>
-    <td align="center">X</td>
-    <td align="center">ตัวคูณ</td>
-    <td align="center">=</td>
-    <td align="center">ผลลัพธ์</td>
-  </tr>
-    {% for num in latest_num_list %}
-  <tr>
-    <td>{{num}}</td>
-    <td align="center">X</td>
-    <td>{{muled}}</td>
-    <td align="center">=</td>
-  </tr>
-  {% endfor %}
-
-</table> -->

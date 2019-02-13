@@ -9,28 +9,32 @@ from django.utils import timezone
 
 # Create your views here.
 
-# class IndexView(generic.ListView):
-#     template_name = 'mulnum/index.html'
-#     context_object_name = 'latest_firstnum'
+#call text box
+def inputnum(request):
+    return render(request,'mulnum/index.html')
 
-    # def get_queryset(self):
-    #     """Return the last five published questions."""
-    #     return Num.objects.order_by('-pub_date')[:5]
+#number from url
+def show(request,id):
+    number = []
+    for i in range(1,13):
+        ans = id * i
+        number.append(ans)
+    context = {
+        'id': id,
+        'num': number
+    }
+    return render(request, 'mulnum/index.html', context)
 
-# answer = []
-# muled = range(1,13)
-# def multiple(request):
-#     i = Num.objects.all()
-#     nummul = Num.objects.request.POST.get('number')
-#     for k in muled :
-#         ans = nummul * k
-#         answer.append(ans)
-#     return HttpResponseRedirect(reverse('mulnum:index'))
+#number from textbox
+def mul(request):
+    number = []
+    for i in range(1,13):
+        ans = int(request.POST['inte']) * i
+        number.append(ans)
+    context = {
+        'id': request.POST['inte'],
+        'num': number
+    }
+    return render(request, 'mulnum/index.html', context)
 
-# class IndexView(generic.ListView):
-#     template_name = 'mulnum/index.html'
-#     context_object_name = 'latest_num_list'
 
-def show(request):
-    
-    return render(request, 'mulnum/index.html')
