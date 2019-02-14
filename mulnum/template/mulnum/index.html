@@ -1,9 +1,6 @@
 <h1>NUMBER</h1>
-<head>
-    <meta charset="UTF-8">
-</head>
 <body>
-<form action= "{% url 'm:mult' %}" method="post">
+<form action= "{% url 'm:often' %}" method="post">
         {% csrf_token %}
         <input type="text" name="inte"  >
         <input type="submit" value="SHOW">
@@ -12,10 +9,7 @@
 
 <hr>
 
-{% for i in num %}
-    <center>{{id}} x {{forloop.counter}} = {{i}}</center>
-    <br>
-{% endfor %}
+
     
 
 

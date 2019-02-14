@@ -23,7 +23,7 @@ def show(request,id):
         'id': id,
         'num': number
     }
-    return render(request, 'mulnum/index.html', context)
+    return render(request, 'mulnum/showmul.html', context)
 
 #number from textbox
 def mul(request):
@@ -35,6 +35,22 @@ def mul(request):
         'id': request.POST['inte'],
         'num': number
     }
-    return render(request, 'mulnum/index.html', context)
+    return render(request, 'mulnum/showmul.html', context)
 
+def calstat(request):
+    k = request.POST['inte'] 
+    d={}
+    all_k = []
+    all_k.append(k)
+    # if k in d.keys() :
+    #     d.values+=1
+    # else:
+    #     d.keys = k
+    #     d.values[k] = 1
+    context = {
+        'num':k,
+        'lst':all_k
+    }
+    return render(request, 'mulnum/statistic.html', context)
+    #return HttpResponseRedirect(reverse('m:often'))
 
