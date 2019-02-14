@@ -1,15 +1,11 @@
 <h1>NUMBER</h1>
 <body>
-<form action= "{% url 'm:often' %}" method="post">
+<form action= "{% url 'm:mult' %}" method="post">
         {% csrf_token %}
-        <input type="text" name="inte"  >
+
+        <input type="text" name="number" >
+        <br>
+
         <input type="submit" value="SHOW">
     </form>
 </body>
-
-<hr>
-
-
-    
-
-

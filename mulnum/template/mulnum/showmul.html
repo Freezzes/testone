@@ -3,3 +3,13 @@
     <center>{{id}} x {{forloop.counter}} = {{i}}</center>
     <br>
 {% endfor %}
+
+<h1>How often to show</h1>
+
+<ul>
+{% for numtext in number.all %}
+    <li>{{ number.numtext }} -- {{ number.count }} call {{ number.count|pluralize }}</li>
+{% endfor %}
+</ul>
+
+

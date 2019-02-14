@@ -1,9 +1,9 @@
-<h1>how often to show</h1>
+<h1>How often to show</h1>
 
-{% for i in lst %}
-    {{i}} show {{ forloop.counter }} times
-    
+<ul>
+{% for numtext in number.all %}
+    <li>{{ number.numtext }} -- {{ number.count }} call {{ number.count|pluralize }}</li>
 {% endfor %}
+</ul>
 
-
-{{lst}}
+<!-- <a href="{% url 'polls:detail' question.id %}">Vote again?</a> -->
