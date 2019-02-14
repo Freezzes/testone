@@ -29,9 +29,8 @@ def show(request,id):
 #number from textbox
 def mul(request):
     numbers = []
-    num = int(request.POST['inte'])
     for i in range(1,13):
-        ans = num * i
+        ans = int(request.POST['inte']) * i
         numbers.append(ans)
 
 
