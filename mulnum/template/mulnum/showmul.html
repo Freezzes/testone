@@ -5,11 +5,11 @@
 {% endfor %}
 
 <h1>How often to show</h1>
-
-<ul>
-{% for numtext in number.all %}
-    <li>{{ number.numtext }} -- {{ number.count }} call {{ number.count|pluralize }}</li>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
 {% endfor %}
-</ul>
+Count number : {{now}}
+
+
 
 
